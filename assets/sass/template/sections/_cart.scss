@@ -1,0 +1,357 @@
+/* Cart ---------------------------------- */
+.woocommerce-cart-form {
+    text-align: center;
+  }
+  
+  .cart_table {
+    border: 0;
+    margin-bottom: 45px;
+  
+    thead {
+      border-bottom: 2px solid $title-color;
+      th {
+        border: none !important;
+      }
+    }
+  
+    td:before,
+    th {
+      font-family: $title-font;
+      color: $title-color;
+      font-weight: 600;
+      border: none;
+      font-size: 14px;
+      padding: 0 0 13px;
+    }
+  
+    td:before {
+      content: attr(data-title);
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      vertical-align: top;
+      padding: 0;
+      transform: translateY(-50%);
+      display: none;
+    }
+  
+    td {
+      border: none;
+      border-bottom: 2px solid $title-color;
+      color: $title-color;
+      font-size: 18px;
+      padding: 20px 10px;
+      position: relative;
+      vertical-align: middle;
+      &[data-title="Name"] {
+        text-align: start;
+        padding: 22px 20px;
+        a {
+          color: $title-color;
+          font-weight: 600;
+          font-size: 20px;
+          font-family: $title-font;
+          &:hover {
+            color: $title-color;
+          }
+          @include md {
+            font-size: 16px;
+          }
+        }
+        @include sm {
+          text-align: end;
+          padding-right: 15px;
+        }
+      }
+      &[data-title="Remove"] {
+        text-align: start;
+        padding-left: 5px;
+        @include md {
+          padding-right: 20px;
+        }
+        @include sm {
+          text-align: end;
+          padding-right: 15px;
+        }
+      }
+      &[data-title="Product"] {
+        width: 100px;
+        padding: 22px 0px;
+        @include sm {
+          width: 100%;
+          padding-right: 15px;
+        }
+      }
+    }
+  
+    .product-quantity {
+      color: $title-color;
+  
+      input {
+        position: relative;
+        top: -2px;
+      }
+  
+    }
+  
+  
+    .cart-productname {
+      font-weight: 400;
+      font-family: $body-font;
+      color: $body-color;
+    }
+  
+    .cart-productimage {
+      display: inline-block;
+      border: 0 solid $smoke-color;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+  
+    .remove {
+      color: #858580;
+      font-size: 18px;
+      &:hover {
+        color: $title-color;
+      }
+    }
+  
+    .quantity { 
+        align-items: center;
+        background: #F6F5F3;
+        padding: 9px 20px;        
+        .title {
+            font-size: 18px;
+            margin-right: 24px;
+            color: $title-color;
+            @include sm {
+              display: none;
+            }
+        }
+        .qty-input {
+            width: 68px;
+            height: auto;
+            border: none;
+            background-color: transparent;
+            color: $title-color;
+            padding: 11px 25px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            font-family: $title-font;
+            border-radius: 0px;
+        }
+        .qty-btn {
+            color: $title-color;
+            background-color: transparent;
+            height: auto;
+            width: auto;
+            border: none;
+            position: relative;
+            z-index: 1;
+            font-size: 14px;
+        }
+        .quantity-minus {
+            margin-right: -14px;
+        }
+        .quantity-plus {
+            margin-left: -14px;
+        }
+    }
+  
+    .actions {
+      text-align: right;
+      vertical-align: middle;
+  
+      >.btn {
+        font-size: 16px;
+        padding: 17px 28px;
+        margin-right: 15px;
+  
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }  
+  }
+  .cart-coupon {
+    float: left;
+    margin: 0;
+    width: 455px;
+    max-width: 100%;
+    display: flex;
+
+    input {
+      height: 60px;
+      width: calc(100% - 200px);
+      margin-right: 16px;
+      padding: 0;
+      border-bottom: 2px solid $title-color;
+      border-radius: 0;
+      &:active,
+      &:focus,
+      &:hover {
+        border-bottom: 2px solid $title-color;
+      }
+      @include xs {
+        width: calc(100% - 106px);
+        height: 50px;
+      }
+    }
+
+
+    .btn {
+      width: max-content;
+    }
+    @include xs {
+      flex-wrap: wrap;
+      gap: 15px 0;
+    }
+  }
+  .cart_totals {
+    border: 0;
+    margin-bottom: 28px;
+    th,
+    td {
+      vertical-align: top;
+      padding: 16px 20px;
+      border: none;
+      border-bottom: 2px solid $title-color;
+      font-size: 14px;
+      color: $title-color;
+      width: 75%;
+      @include md {
+        width: 50%;
+      }
+      &:first-child {
+        width: 25%;
+        background-color: transparent;
+        padding-left: 0;
+        font-weight: 600;
+        font-family: $title-font;
+        font-size: 14px;
+        color: $title-color;
+        @include md {
+          width: 50%;
+        }
+      }
+    }
+  
+    .amount {
+      font-weight: 400;
+      font-size: 18px;
+    }
+  
+    .order-total {
+      .amount {
+        font-weight: 600;
+      }
+    }
+  
+  }
+  
+  @include md {
+    .cart_table {
+  
+      th {
+        padding: 23px 8px;
+        font-size: 14px;
+      }
+  
+      .cart-productname {
+        font-size: 14px;
+      }
+  
+  
+      .cart-coupon {
+        width: 100%;
+        margin-bottom: 20px;
+        justify-content: center;
+      }
+  
+  
+      .actions {
+        text-align: center;
+  
+  
+      }
+  
+    }
+  }
+  
+  @include sm {
+    .cart_table {
+      text-align: left;
+      min-width: auto;
+      border-collapse: separate;
+      border-spacing: 0 20px;
+      border: none;
+  
+      thead {
+        display: none;
+      }
+  
+      td {
+        padding: 15px;
+        display: block;
+        width: 100%;
+        padding-left: 25%;
+        text-align: right;
+        border: 1px solid #f3f3f3;
+        border-bottom: none;
+  
+        &::before {
+          display: block;
+        }
+  
+        &:last-child {
+          border-bottom: 1px solid #f3f3f3;
+        }
+  
+        &.actions {
+          padding-left: 15px;
+          text-align: center;
+  
+          >.btn {
+            margin-top: 10px;
+            margin-right: 0;
+            display: block;
+            width: max-content;
+            margin-left: auto;
+            margin-right: auto;
+  
+            &:last-child {
+              margin-right: auto;
+            }
+          }
+        }
+      }
+  
+      .cart-coupon {
+        width: 100%;
+        text-align: center;
+        float: none;
+        justify-content: center;
+        display: block;
+        padding-bottom: 10px;
+  
+        input {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  
+    .cart_totals {
+  
+      th,
+      td {
+        padding: 15px 10px;
+  
+        &:first-child {
+          width: 17%;
+          line-height: 1.4;
+        }
+      }
+    }
+}
